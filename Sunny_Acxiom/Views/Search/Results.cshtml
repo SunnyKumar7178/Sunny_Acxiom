@@ -1,0 +1,68 @@
+﻿@{
+    ViewData["Title"] = "Search Results";
+}
+
+<h2>Search Results for: @ViewBag.Query</h2>
+<hr />
+
+<!-- EMPLOYEE RESULTS -->
+<h3>Employee Results</h3>
+
+@if (ViewBag.EmpResults.Count == 0)
+{
+    <p class="text-danger">No employees found.</p>
+}
+else
+{
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Department</th>
+        </tr>
+
+        @foreach (var e in ViewBag.EmpResults)
+        {
+            <tr>
+                <td>@e.Emp_Id</td>
+                <td>@e.E_Name</td>
+                <td>@e.E_Email</td>
+                <td>@e.Department</td>
+            </tr>
+        }
+    </table>
+}
+
+<hr />
+
+<!-- CUSTOMER RESULTS -->
+<h3>Customer Results</h3>
+
+@if (ViewBag.CustResults.Count == 0)
+{
+    <p class="text-danger">No customers found.</p>
+}
+else
+{
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>City</th>
+            <th>Phone</th>
+        </tr>
+
+        @foreach (var c in ViewBag.CustResults)
+        {
+            <tr>
+                <td>@c.Customer_Id</td>
+                <td>@c.C_Name</td>
+                <td>@c.C_Email</td>
+                <td>@c.City</td>
+                <td>@c.Phone_Number</td>
+            </tr>
+        }
+    </table>
+}

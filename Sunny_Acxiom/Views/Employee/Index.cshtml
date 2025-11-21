@@ -1,0 +1,38 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model IEnumerable<Sunny_Acxiom.Models.Employee>
+
+<h2>Employee List</h2>
+
+<a class="btn btn-primary" href="/Employee/Create">Add New Employee</a>
+
+<table class="table table-bordered table-striped mt-3">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Department</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var emp in Model)
+        {
+            <tr>
+                <td>@emp.Emp_Id</td>
+                <td>@emp.E_Name</td>
+                <td>@emp.E_Email</td>
+                <td>@emp.Department</td>
+                <td>
+                    <a href="/Employee/Details/@emp.Emp_Id" class="btn btn-info">Details</a>
+                    <a href="/Employee/Edit/@emp.Emp_Id" class="btn btn-warning">Edit</a>
+                    <a href="/Employee/Delete/@emp.Emp_Id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

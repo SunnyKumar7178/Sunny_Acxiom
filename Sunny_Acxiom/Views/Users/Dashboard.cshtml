@@ -1,0 +1,181 @@
+﻿@*   
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+
+@{
+}
+<div class="dash-box text-center">
+    <marquee behavior="alternate">
+        <h1 class="text-primary">Welcome to Acxiom Consulting, @ViewBag.Name!</h1>
+    </marquee>
+</div>
+
+<style>
+    body {
+        background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f');
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+    }
+
+    .dash-box {
+        margin-top: 100px;
+        background: rgba(255, 255, 255, 0.8);
+        padding: 15px;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 15px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+</style> *@
+
+
+@*
+    CRM Dashboard Page
+*@
+@{
+}
+
+<!-- MAIN WRAPPER -->
+<div class="wrapper">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <h2 class="logo">CRM Dashboard</h2>
+        <ul>
+            <li><a href="/Users/Dashboard"><i class="fas fa-home"></i> Dashboard</a></li>
+            <li>
+                <form action="/Search/Results" method="get">
+                    <input type="text" name="query" placeholder="Search All..."
+                           style="width: 100%; padding: 10px; border-radius: 5px; border: none; margin-top: 10px;">
+                </form>
+            </li>
+            <li><a href="/Employee/Index"><i class="fas fa-users"></i> Employee</a></li>
+            <li><a href="/Customer/Index"><i class="fas fa-user-friends"></i> Customer</a></li>
+            <li><a href="/Report/Index"><i class="fas fa-chart-line"></i> Reports</a></li>
+            <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+        </ul>
+        
+
+    </div>
+
+    <!-- CONTENT AREA -->
+    <div class="main-content">
+
+        <!-- Header with Marquee -->
+        <div class="header-box">
+            <marquee behavior="alternate">
+                <h1 class="welcome-text">
+                    Welcome to Acxiom Consulting, @ViewBag.Name!
+                </h1>
+            </marquee>
+        </div>
+
+        <div class="content-area">
+            <h2>Your CRM Dashboard</h2>
+            <p>Manage Employees, Customers, Reports, and more.</p>
+        </div>
+
+    </div>
+</div>
+
+<!-- STYLES -->
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Segoe UI, sans-serif;
+        background-image: url("https://images.unsplash.com/photo-1519389950473-47ba0277781c");
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+    }
+
+    /* WRAPPER */
+    .wrapper {
+        display: flex;
+        height: 100vh;
+        width: 100%;
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+        width: 260px;
+        background: rgba(0, 0, 0, 0.85);
+        color: white;
+        padding: 20px;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+        .sidebar .logo {
+            text-align: center;
+            font-size: 22px;
+            margin-bottom: 30px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+            .sidebar ul li {
+                padding: 12px 8px;
+                font-size: 18px;
+                margin-bottom: 8px;
+                transition: 0.3s;
+            }
+
+                .sidebar ul li a {
+                    color: white;
+                    text-decoration: none;
+                }
+
+                .sidebar ul li:hover {
+                    background: #007bff;
+                    border-radius: 5px;
+                    padding-left: 15px;
+                }
+
+    /* MAIN CONTENT */
+    .main-content {
+        margin-left: 260px;
+        padding: 20px;
+        width: calc(100% - 260px);
+    }
+
+    /* HEADER BOX */
+    .header-box {
+        background: rgba(255, 255, 255, 0.7);
+        padding: 15px;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        margin-bottom: 25px;
+    }
+
+    .welcome-text {
+        color: #0056b3;
+        font-size: 28px;
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
+
+    /* CONTENT AREA */
+    .content-area {
+        background: rgba(255, 255, 255, 0.85);
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+</style>
+
+<!-- FONTAWESOME -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+
+

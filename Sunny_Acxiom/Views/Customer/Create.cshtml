@@ -1,0 +1,37 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Sunny_Acxiom.Models.Customer
+
+<h2 class="text-primary mb-4">Add New Customer</h2>
+
+<div class="card shadow-lg p-4">
+    <form asp-action="Create" method="post">
+
+        <div class="mb-3">
+            <label>Name</label>
+            <input asp-for="C_Name" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label>City</label>
+            <input asp-for="City" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label>Phone Number</label>
+            <input asp-for="Phone_Number" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label>Email</label>
+            <input asp-for="C_Email" class="form-control" />
+        </div>
+
+        <button type="submit" class="btn btn-success">Save</button>
+        <a href="/Customer" class="btn btn-secondary">Back</a>
+
+    </form>
+</div>

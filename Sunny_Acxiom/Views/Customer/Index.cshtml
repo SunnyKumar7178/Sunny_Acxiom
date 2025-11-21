@@ -1,0 +1,42 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model IEnumerable<Sunny_Acxiom.Models.Customer>
+
+<h2 class="text-center text-primary mb-4">Customer List</h2>
+
+<div class="text-end mb-3">
+    <a class="btn btn-success" href="/Customer/Create">+ Add New Customer</a>
+</div>
+
+<table class="table table-bordered shadow-lg table-hover">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>City</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th style="width: 220px;">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cust in Model)
+        {
+            <tr>
+                <td>@cust.Customer_Id</td>
+                <td>@cust.C_Name</td>
+                <td>@cust.City</td>
+                <td>@cust.Phone_Number</td>
+                <td>@cust.C_Email</td>
+                <td>
+                    <a href="/Customer/Details/@cust.Customer_Id" class="btn btn-info btn-sm">Details</a>
+                    <a href="/Customer/Edit/@cust.Customer_Id" class="btn btn-warning btn-sm">Edit</a>
+                    <a href="/Customer/Delete/@cust.Customer_Id" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

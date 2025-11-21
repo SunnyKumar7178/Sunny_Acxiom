@@ -1,0 +1,21 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Sunny_Acxiom.Models.Customer
+
+<h2 class="text-danger mb-4">Delete Customer</h2>
+
+<div class="card shadow p-4">
+    <p><strong>Name:</strong> @Model.C_Name</p>
+    <p><strong>City:</strong> @Model.City</p>
+    <p><strong>Phone:</strong> @Model.Phone_Number</p>
+    <p><strong>Email:</strong> @Model.C_Email</p>
+
+    <form method="post" asp-action="DeleteConfirmed">
+        <input type="hidden" asp-for="Customer_Id" />
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <a href="/Customer" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>

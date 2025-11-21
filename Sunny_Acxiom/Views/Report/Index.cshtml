@@ -1,0 +1,79 @@
+﻿@model Sunny_Acxiom.Models.ReportViewModel
+
+<h1 class="text-center">Summary Report</h1>
+
+<br />
+
+<!-- COUNT CARDS -->
+<div class="row">
+    <div class="col-md-6">
+        <div class="alert alert-primary">
+            <h2>Total Employees: @ViewBag.EmpCount</h2>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="alert alert-success">
+            <h2>Total Customers: @ViewBag.CustCount</h2>
+        </div>
+    </div>
+</div>
+
+<hr />
+
+<!-- EMPLOYEE TABLE -->
+<h2>Employee Details</h2>
+<table class="table table-bordered table-striped">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Department</th>
+        <th>Action</th>
+    </tr>
+
+    @foreach (var e in Model.Employees)
+    {
+        <tr>
+            <td>@e.Emp_Id</td>
+            <td>@e.E_Name</td>
+            <td>@e.E_Email</td>
+            <td>@e.Department</td>
+            <td>
+                <a href="/Report/DeleteEmployee/@e.Emp_Id"
+                   class="btn btn-danger btn-sm">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
+
+<hr />
+
+<!-- CUSTOMER TABLE -->
+<h2>Customer Details</h2>
+<table class="table table-bordered table-striped">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>City</th>
+        <th>Phone</th>
+        <th>Action</th>
+    </tr>
+
+    @foreach (var c in Model.Customers)
+    {
+        <tr>
+            <td>@c.Customer_Id</td>
+            <td>@c.C_Name</td>
+            <td>@c.C_Email</td>
+            <td>@c.City</td>
+            <td>@c.Phone_Number</td>
+            <td>
+                <a href="/Report/DeleteCustomer/@c.Customer_Id"
+                   class="btn btn-danger btn-sm">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
+

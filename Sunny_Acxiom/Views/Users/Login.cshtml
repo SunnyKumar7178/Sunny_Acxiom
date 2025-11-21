@@ -1,0 +1,47 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model Sunny_Acxiom.Models.User
+
+<div class="login-box">
+    <h2 class="text-center text-primary">Login</h2>
+
+    <form asp-action="Login" method="post">
+
+        <label>Email</label>
+        <input asp-for="Email" class="form-control mb-3" required />
+
+        <label>Password</label>
+        <input asp-for="Password" type="password" class="form-control mb-3" required />
+
+        <button class="btn btn-primary w-100 mt-3">Login</button>
+
+        @if (ViewBag.Error != null)
+        {
+            <p class="text-danger mt-3">@ViewBag.Error</p>
+        }
+    </form>
+</div>
+
+<style>
+    body {
+        background-image: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c');
+        background-size: cover;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .login-box {
+        width: 420px;
+        background: rgba(255,255,255,0.9);
+        padding: 35px;
+        border-radius: 15px;
+        box-shadow: 0 7px 20px rgba(0,0,0,0.4);
+    }
+</style>
+
